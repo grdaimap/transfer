@@ -295,14 +295,6 @@
 
       var day=document.getElementById('day');
       var night=document.getElementById('night');
-      if((h1>=1&&h2>=8)||(h1=0&&h2<=6))
-      {       
-        day.style.display="none";
-        night.style.display="";
-      }else{
-        night.style.display="none";
-        day.style.display="";
-      }
 
       set_nix_class("s1", s1);
       set_nix_class("s2", s2);
@@ -312,6 +304,16 @@
 
       set_nix_class("h1", h1);
       set_nix_class("h2", h2);
+
+      if((h1>=1&&h2>=8)||(h1=0&&h2<=6))
+      {       
+        day.style.display="none";
+        night.style.display="";
+      }else
+      {
+        night.style.display="none";
+        day.style.display="";
+      }
 
       var t = setTimeout(startTime, 450);
 
