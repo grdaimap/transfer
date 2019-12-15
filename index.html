@@ -5,12 +5,16 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="icon" sizes="any" mask="" href="./top.png">
-  <title>世界线变动仪</title>
+  <title>世界线变动仪，宇宙在上</title>
 
 
   <style>
+    img{
+      margin-top:15% ;
+      width: 100%;
+    }
     body {
-      background-color: #112;
+      background-color:black; 
     }
 
     .nixcont {
@@ -242,6 +246,10 @@
     </div>
 
   </div>
+  <div >
+    <img id="day" style="display: none;" src="./TheExpanse.png">
+    <img id="night" style="display: none;"  src="TheExpanse2.png">
+  </div>
   <script>
     //These functions help add, remove or toggle css classes
 
@@ -284,6 +292,17 @@
 
       var s1 = (s - s % 10) / 10;
       var s2 = s % 10;
+
+      var day=document.getElementById('day');
+      var night=document.getElementById('night');
+      if((h1>=1&&h2>=8)||(h1=0&&h2<=6))
+      {       
+        day.style.display="none";
+        night.style.display="";
+      }else{
+        night.style.display="none";
+        day.style.display="";
+      }
 
       set_nix_class("s1", s1);
       set_nix_class("s2", s2);
